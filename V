@@ -11,6 +11,6 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jen
 	Name = "Duped Sheckels",
 	Callback = function()
       		print("button pressed")
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/TheLastqer/V100/refs/heads/main/FxZv100'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/TheLastqer/V100/refs/heads/main/FxZ'))()
   	end    
 })
