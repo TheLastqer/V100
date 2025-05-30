@@ -1,0 +1,19 @@
+
+getgenv().destroyeconomy = true
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SellPetEvent = ReplicatedStorage:WaitForChild("GameEvents"):WaitForChild("SellPet_RE")
+local LocalPlayer = Players.LocalPlayer
+
+while getgenv().destroyeconomy do
+    task.wait() 
+    
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr ~= LocalPlayer and plr.Character then
+            local tool = plr.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:GetAttribute("ItemType") == "Pet" then
+                SellPetEvent:FireServer(tool)
+            end
+        end
+    end
+end
